@@ -1,0 +1,38 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# PyInstaller outputs
+*.spec
+*.exe
+
+# Test and coverage reports
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor / OS files
+*.log
+Thumbs.db
+.DS_Store
+
+# MSIX staging & artifacts
+packaging/msix/staging/
+*.msix
+*.pfx
+
+# Bench reports
+reports/
