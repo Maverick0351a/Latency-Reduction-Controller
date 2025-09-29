@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib
 import platform
 import sys
 from dataclasses import dataclass
@@ -27,10 +28,9 @@ def detect_caps() -> WinCaps:
     has_pywin32 = False
     can_set_prio = False
     try:
-        import win32api  # type: ignore
-        import win32con  # type: ignore
-        import win32process  # type: ignore
-
+        importlib.import_module("win32api")
+        importlib.import_module("win32con")
+        importlib.import_module("win32process")
         has_pywin32 = True
         can_set_prio = True
     except Exception:
@@ -39,8 +39,7 @@ def detect_caps() -> WinCaps:
 
     has_nvml = False
     try:
-        import pynvml  # type: ignore
-
+        importlib.import_module("pynvml")
         has_nvml = True
     except Exception:
         has_nvml = False
